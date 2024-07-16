@@ -37,7 +37,7 @@ async def welcome(bot, message):
                     pass
             temp.MELCOW['welcome'] = await message.reply_video(
                 video=MELCOW_VID,
-                caption=script.MELCOW_ENG.format(u.mention, message.chat.title),
+                mention = message.new_chat_member.user.mention,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=SUPPORT_LINK),
