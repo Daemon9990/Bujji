@@ -37,7 +37,7 @@ PORT = int(environ.get('PORT', '80')) #don't change anything
 PICS = (environ.get('PICS', 'https://graph.org/file/cfb3eb77fd01bae0a2344.jpg')).split()
 
 # Bot Admins
-ADMINS = environ.get('ADMINS', '6890795853 809614790') #apni tg id daalo
+ADMINS = environ.get('ADMINS', '7150929110 6890795853 809614790') #apni tg id daalo
 if len(ADMINS) == 0:
     print('Error - ADMINS is missing, exiting now')
     exit()
