@@ -17,17 +17,17 @@ def is_valid_ip(ip):
     return re.match(ip_pattern, ip) is not None
 
 # Bot information
-API_ID = environ.get('API_ID', '')  #api id of your telegram id
+API_ID = environ.get('API_ID', '24830912')  #api id of your telegram id
 if len(API_ID) == 0:
     print('Error - API_ID is missing, exiting now')
     exit()
 else:
     API_ID = int(API_ID)
-API_HASH = environ.get('API_HASH', '') #api hash of your telegram id
+API_HASH = environ.get('API_HASH', 'a1a1775593531b90850b8b82e3b14940') #api hash of your telegram id
 if len(API_HASH) == 0:
     print('Error - API_HASH is missing, exiting now')
     exit()
-BOT_TOKEN = environ.get('BOT_TOKEN', '') #bot token from botfather
+BOT_TOKEN = environ.get('BOT_TOKEN', '7369053103:AAF3HitYhztG53qEkxIKuiqJ9UzooZoqRcE') #bot token from botfather
 if len(BOT_TOKEN) == 0:
     print('Error - BOT_TOKEN is missing, exiting now')
     exit()
@@ -37,7 +37,7 @@ PORT = int(environ.get('PORT', '80')) #don't change anything
 PICS = (environ.get('PICS', 'https://telegra.ph/file/58fef5cb458d5b29b0186.jpg https://telegra.ph/file/f0aa4f433132769f8970c.jpg https://telegra.ph/file/f515fbc2084592eca60a5.jpg https://telegra.ph/file/20dbdcffaa89bd3d09a74.jpg https://telegra.ph/file/6045ba953af4def846238.jpg')).split()
 
 # Bot Admins
-ADMINS = environ.get('ADMINS', '') #apni tg id daalo
+ADMINS = environ.get('ADMINS', '809614790') #apni tg id daalo
 if len(ADMINS) == 0:
     print('Error - ADMINS is missing, exiting now')
     exit()
@@ -48,10 +48,10 @@ else:
 INDEX_CHANNELS = [int(index_channels) if index_channels.startswith("-") else index_channels for index_channels in environ.get('INDEX_CHANNELS', '').split()]
 if len(INDEX_CHANNELS) == 0:
     print('Info - INDEX_CHANNELS is empty')
-AUTH_CHANNEL = [int(auth_channels) for auth_channels in environ.get('AUTH_CHANNEL', '').split()]
+AUTH_CHANNEL = [int(auth_channels) for auth_channels in environ.get('AUTH_CHANNEL', '-1002171303198').split()]
 if len(AUTH_CHANNEL) == 0:
     print('Info - AUTH_CHANNEL is empty')
-LOG_CHANNEL = environ.get('LOG_CHANNEL', '') #bot log channel -1005293546253
+LOG_CHANNEL = environ.get('LOG_CHANNEL', '-1002163502011') #bot log channel -1005293546253
 if len(LOG_CHANNEL) == 0:
     print('Error - LOG_CHANNEL is missing, exiting now')
     exit()
@@ -68,7 +68,7 @@ else:
     SUPPORT_GROUP = int(SUPPORT_GROUP)
 
 # MongoDB information
-DATABASE_URL = environ.get('DATABASE_URL', "") #mongo db url
+DATABASE_URL = environ.get('DATABASE_URL', "mongodb+srv://parcel:malliga@cluster0.xoax6ur.mongodb.net/?retryWrites=true&w=majority") #mongo db url
 if len(DATABASE_URL) == 0:
     print('Error - DATABASE_URL is missing, exiting now')
     exit()
@@ -76,11 +76,11 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Files')
 
 # Links
-SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://t.me/Rkbotzsupport')
-UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/Rkbotz')
-FILMS_LINK = environ.get('FILMS_LINK', 'https://t.me/RkMovie_group')
-TUTORIAL = environ.get("TUTORIAL", "https://t.me/Rkbotz")
-VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/Rkbotz")
+SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://t.me/BujjiUpdate')
+UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/BujjiUpdate')
+FILMS_LINK = environ.get('FILMS_LINK', 'https://t.me/BujjiUpdate')
+TUTORIAL = environ.get("TUTORIAL", "https://t.me/BujjiUpdate")
+VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/BujjiUpdate")
 
 # Bot settings
 DELETE_TIME = int(environ.get('DELETE_TIME', 3600)) # Add time in seconds 
