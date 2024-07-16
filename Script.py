@@ -100,6 +100,8 @@ JOIN: [BUJJI](https://t.me/BujjiUpdate)</i>
 
     WELCOME_TEXT = """👋 Hello {mention}, Welcome to {title} group! 💞"""
 
+    MELCOW_ENG = """<b>Hᴇʟʟᴏ {} 😍, Aɴᴅ Wᴇʟᴄᴏᴍᴇ Tᴏ {} Gʀᴏᴜᴘ ❤️</b>"""
+
     HELP_TXT = """<b>Note - <spoiler>Try each command without any argument to see more details 😹</spoiler></b>"""
     
     ADMIN_COMMAND_TXT = """<b>Here is bot admin commands 👇
