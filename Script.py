@@ -9,7 +9,7 @@ class script(object):
 ★ Library: <a href=https://pyrogram.org>Pyrogram</a>"""
 
     MY_OWNER_TXT = """★ Name: Be Like Bujji
-★ Username: @BujjiFatherBot
+★ Username: @BujjiXBot
 ★ Update Channel : @BujjiUpdate"""
 
     STATUS_TXT = """🗂 Total Files: <code>{}</code>
@@ -92,11 +92,7 @@ I can't find the <b>{}</b> in my database! 🥲
 
     FILE_CAPTION = """<i>📂Fɪʟᴇɴᴀᴍᴇ : {file_caption}
 
-
-
 <b> Size ⚙️: {file_size}
-
-
 
 JOIN: [BUJJI](https://t.me/BujjiUpdate)</i>
 
