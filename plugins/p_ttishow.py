@@ -50,7 +50,7 @@ async def welcome(bot, message):
                 [
                     [InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
                      InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)],
-                    [InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="https://t.me/TheRockers2")]
+                    [InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="https://t.me/Daemon999")]
                 ]
             ),
             parse_mode=enums.ParseMode.HTML
