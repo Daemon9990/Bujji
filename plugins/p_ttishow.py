@@ -2,7 +2,7 @@ import random, os, sys
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS, LOG_CHANNEL, PICS, SUPPORT_LINK, UPDATES_LINK, MELCOW_VID, CHNL_LNK, GRP_LNK
+from info import ADMINS, LOG_CHANNEL, PICS, SUPPORT_LINK, UPDATES_LINK, MELCOW_VID
 from database.users_chats_db import db
 from database.ia_filterdb import Media
 from utils import get_size, temp, get_settings
@@ -48,8 +48,8 @@ async def welcome(bot, message):
             caption=script.MELCOW_ENG.format(u.mention, message.chat.title),
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                     InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)],
+                    [InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=SUPPORT_LINK),
+                     InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=UPDATES_LINK)],
                     [InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="https://t.me/Daemon999")]
                 ]
             ),
