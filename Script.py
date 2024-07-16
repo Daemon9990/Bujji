@@ -47,7 +47,8 @@ I can't find the <b>{}</b> in my database! 🥲
 
 👉 Google Search and check your spelling is correct.
 👉 Please read the Instructions to get better results.
-👉 Or not been released yet."""
+👉 Or not been released yet.
+👉 contact @BujjiFatherBot """
     
     EARN_TXT = """<b>ʜᴏᴡ ᴛᴏ ᴇᴀʀɴ ꜰʀᴏᴍ ᴛʜɪs ʙᴏᴛ
 
@@ -89,7 +90,15 @@ I can't find the <b>{}</b> in my database! 🥲
 🗣 Requested by: {message.from_user.mention}
 ©️ Powered by: <b>{message.chat.title}</b>"""
 
-    FILE_CAPTION = """<i>{file_name}</i>
+    FILE_CAPTION = """<i>📂Fɪʟᴇɴᴀᴍᴇ : {file_caption}
+
+
+
+<b> Size ⚙️: {file_size}
+
+
+
+JOIN: [BUJJI](https://t.me/BujjiUpdate)</i>
 
 🚫 ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ᴄʟᴏsᴇ ʙᴜᴛᴛᴏɴ ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ sᴇᴇɴ ᴛʜᴇ ᴍᴏᴠɪᴇ 🚫"""
 
