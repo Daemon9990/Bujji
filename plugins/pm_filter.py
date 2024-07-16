@@ -491,9 +491,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
     elif query.data == "buy_premium":
         btn = [[
-            InlineKeyboardButton("🏦 ꜱᴇʟᴇᴄᴛ ᴘᴀʏᴍᴇɴᴛ ᴍᴏᴅᴇ 🏧", callback_data="Upi"),
-            [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+            InlineKeyboardButton("🏦 ꜱᴇʟᴇᴄᴛ ᴘᴀʏᴍᴇɴᴛ ᴍᴏᴅᴇ 🏧", callback_data="Upi")
             
+           
         ]]            
             
         reply_markup = InlineKeyboardMarkup(btn)
