@@ -31,12 +31,7 @@ async def welcome(bot, message):
         
         settings = await get_settings(message.chat.id)
         if settings["welcome"]:
-            for u in message.new_chat_members:
-                if (temp.MELCOW).get('welcome') is not None:
-                    try:
-                        await (temp.MELCOW['welcome']).delete()
-                    except:
-                        pass
+            
                 temp.MELCOW['welcome'] = await message.reply_video(
                                                  video=(MELCOW_VID),
                                                  caption=(script.WELCOME_TEXT.format(u.mention, message.chat.title)),
