@@ -1,4 +1,5 @@
 import random, os, sys
+import asyncio
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
@@ -28,37 +29,29 @@ async def welcome(bot, message):
             )
             return
         
-        settings = await get_settings(message.chat.id)
-        if settings["welcome"]:
-            WELCOME = settings['welcome_text']
-            welcome_msg = WELCOME.format(
-                mention=message.new_chat_member.user.mention,
-                title=message.chat.title
+        for u in message.new_chat_members:
+            if temp.MELCOW.get('welcome') is not None:
+                try:
+                    await temp.MELCOW['welcome'].delete()
+                except:
+                    pass
+            temp.MELCOW['welcome'] = await message.reply_video(
+                video=MELCOW_VID,
+                caption=script.MELCOW_ENG.format(u.mention, message.chat.title),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=SUPPORT_LINK),
+                         InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=UPDATES_LINK)],
+                        [InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="https://t.me/DAEMON99")]
+                    ]
+                ),
+                parse_mode=enums.ParseMode.HTML
             )
-            await bot.send_message(chat_id=message.chat.id, text=welcome_msg)
-            
-    for u in message.new_chat_members:
-        if temp.MELCOW.get('welcome') is not None:
-            try:
+
+            settings = await get_settings(message.chat.id)
+            if settings["auto_delete"]:
+                await asyncio.sleep(600)
                 await temp.MELCOW['welcome'].delete()
-            except:
-                pass
-        temp.MELCOW['welcome'] = await message.reply_video(
-            video=MELCOW_VID,
-            caption=script.MELCOW_ENG.format(u.mention, message.chat.title),
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=SUPPORT_LINK),
-                     InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=UPDATES_LINK)],
-                    [InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="https://t.me/Daemon999")]
-                ]
-            ),
-            parse_mode=enums.ParseMode.HTML
-        )
-        
-        if settings["auto_delete"]:
-            await asyncio.sleep(600)
-            await temp.MELCOW['welcome'].delete()
 
 
 @Client.on_message(filters.command('restart') & filters.user(ADMINS))
@@ -222,49 +215,7 @@ async def unban_a_user(bot, message):
     else:
         jar = await db.get_ban_status(k.id)
         if not jar['is_banned']:
-            return await message.reply(f"{k.mention} is not yet banned.")
-        await db.remove_ban(k.id)
+            return await message.reply(f"{k.mention} is not banned.")
+        await db.unban_user(k.id)
         temp.BANNED_USERS.remove(k.id)
         await message.reply(f"Successfully unbanned {k.mention}")
-
-
-@Client.on_message(filters.command('users') & filters.user(ADMINS))
-async def list_users(bot, message):
-    raju = await message.reply('Getting list of users')
-    users = await db.get_all_users()
-    out = "Users saved in database are:\n\n"
-    async for user in users:
-        out += f"**Name:** {user['name']}\n**ID:** `{user['id']}`"
-        if user['ban_status']['is_banned']:
-            out += ' (Banned User)'
-        if user['verify_status']['is_verified']:
-            out += ' (Verified User)'
-        out += '\n\n'
-    try:
-        await raju.edit_text(out)
-    except MessageTooLong:
-        with open('users.txt', 'w+') as outfile:
-            outfile.write(out)
-        await message.reply_document('users.txt', caption="List of users")
-        await raju.delete()
-        os.remove('users.txt')
-
-
-@Client.on_message(filters.command('chats') & filters.user(ADMINS))
-async def list_chats(bot, message):
-    raju = await message.reply('Getting list of chats')
-    chats = await db.get_all_chats()
-    out = "Chats saved in database are:\n\n"
-    async for chat in chats:
-        out += f"**Title:** {chat['title']}\n**ID:** `{chat['id']}`"
-        if chat['chat_status']['is_disabled']:
-            out += ' (Disabled Chat)'
-        out += '\n\n'
-    try:
-        await raju.edit_text(out)
-    except MessageTooLong:
-        with open('chats.txt', 'w+') as outfile:
-            outfile.write(out)
-        await message.reply_document('chats.txt', caption="List of chats")
-        await raju.delete()
-        os.remove('chats.txt')
