@@ -28,7 +28,7 @@ async def welcome(bot, message):
                 reply_markup=reply_markup
             )
             return
-        else:
+        
         settings = await get_settings(message.chat.id)
         if settings["welcome"]:
             for u in message.new_chat_members:
