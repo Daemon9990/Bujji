@@ -384,7 +384,7 @@ async def advantage_spoll_choker(bot, query):
 async def upi_payment_info(client, callback_query):
     cmd = callback_query.message
     btn = [[            
-        InlineKeyboardButton("ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ 🧾", user_id=owner)
+        InlineKeyboardButton("ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ 🧾", user_id=admin)
     ]
         for admin in ADMINS
     ]
@@ -415,7 +415,7 @@ async def upi_payment_info(client, callback_query):
 async def qr_code_info(client, callback_query):
     cmd = callback_query.message
     btn = [[            
-        InlineKeyboardButton("ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ 🧾", user_id=owner)
+        InlineKeyboardButton("ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ 🧾", user_id=admin)
     ]
         for admin in ADMINS
     ]
@@ -439,7 +439,7 @@ async def qr_code_info(client, callback_query):
 async def upi_id_info(client, callback_query):
     cmd = callback_query.message
     btn = [[            
-        InlineKeyboardButton("ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ 🧾", user_id=owner)
+        InlineKeyboardButton("ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ 🧾", user_id=admin)
     ]
         for admin in ADMINS
     ]
@@ -491,7 +491,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
     elif query.data == "buy_premium":
         btn = [[
-            InlineKeyboardButton("🏦 ꜱᴇʟᴇᴄᴛ ᴘᴀʏᴍᴇɴᴛ ᴍᴏᴅᴇ 🏧", callback_data="Upi")
+            InlineKeyboardButton("🏦 ꜱᴇʟᴇᴄᴛ ᴘᴀʏᴍᴇɴᴛ ᴍᴏᴅᴇ 🏧", callback_data="Upi"),
+            [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+            
         ]]            
             
         reply_markup = InlineKeyboardMarkup(btn)
