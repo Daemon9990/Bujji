@@ -44,6 +44,9 @@ if len(ADMINS) == 0:
 else:
     ADMINS = [int(admins) for admins in ADMINS.split()]
 
+#Bot Owners
+OWNER = environ.get('OWNER', '683443719')
+
 # Channels
 INDEX_CHANNELS = [int(index_channels) if index_channels.startswith("-") else index_channels for index_channels in environ.get('INDEX_CHANNELS', '-1002149071872').split()]
 if len(INDEX_CHANNELS) == 0:
