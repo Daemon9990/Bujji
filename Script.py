@@ -90,11 +90,8 @@ I can't find the <b>{}</b> in my database! 🥲
 🗣 Requested by: {message.from_user.mention}
 ©️ Powered by: <b>{message.chat.title}</b>"""
 
-    FILE_CAPTION = """<i>📂Fɪʟᴇɴᴀᴍᴇ : {file_caption}
-
-<b> Size ⚙️: {file_size}
-
-JOIN: [BUJJI](https://t.me/BujjiUpdate)</i>
+    
+    FILE_CAPTION = """<i>{file_name}</i>
 
 🚫 ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ᴄʟᴏsᴇ ʙᴜᴛᴛᴏɴ ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ sᴇᴇɴ ᴛʜᴇ ᴍᴏᴠɪᴇ 🚫"""
 
